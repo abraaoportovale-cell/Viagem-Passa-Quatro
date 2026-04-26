@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Roteiro Passa Quatro · 01–03 de Maio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+
+  <style>
+    :root {
+      --g0:  #1e3524;
+      --g1:  #2e5436;
+      --g2:  #4a7c54;
+      --g3:  #7aaa82;
+      --g4:  #b8d8bc;
+      --g5:  #dff0e1;
+      --be0: #f9f4ee;
+      --be1: #efe7db;
+      --be2: #ddd0c0;
+      --tc0: #7a4a2a;
+      --tc1: #b07040;
+      --tc2: #d4a070;
+      --az0: #3a6878;
+      --az1: #6898a8;
+      --az2: #b8d8e4;
+      --tx:  #2c1f14;
+      --tx2: #5a4e42;
+      --tx3: #8a7e74;
+      --white: #fdfaf7;
+      --shadow: 0 2px 16px rgba(30,53,36,0.10), 0 1px 4px rgba(0,0,0,0.05);
+      --shadow-hover: 0 8px 32px rgba(30,53,36,0.16), 0 2px 8px rgba(0,0,0,0.07);
+      --radius: 18px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--be0);
+      color: var(--tx);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      position: relative;
+      min-height: 100svh;
+      background: var(--g0);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      overflow: hidden;
+      padding: 4rem 1.5rem 6rem;
+    }
+
+    .hero-glow {
+      position: absolute;
+      top: 8%; left: 50%;
+      transform: translateX(-50%);
+      width: 72vw; height: 72vw;
+      max-width: 580px; max-height: 580px;
+      background: radial-gradient(circle, rgba(74,124,84,0.26) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero-mountains {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      width: 100%;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .hero-content { position: relative; z-index: 2; }
+
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      border: 1px solid rgba(184,216,188,0.35);
+      background: rgba(255,255,255,0.06);
+      backdrop-filter: blur(10px);
+      padding: 0.42rem 1rem;
+      border-radius: 100px;
+      color: var(--g4);
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      margin-bottom: 2rem;
+    }
+
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 400;
+      font-size: clamp(3.2rem, 11vw, 7.5rem);
+      line-height: 1.0;
+      color: #fff;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.3rem;
+    }
+
+    .hero h1 em { font-style: italic; color: var(--tc2); }
+
+    .hero-tagline {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: clamp(1rem, 2.5vw, 1.35rem);
+      color: rgba(255,255,255,0.5);
+      margin-bottom: 2.5rem;
+    }
+
+    .hero-chips {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.6rem;
+      margin-bottom: 2.8rem;
+    }
+
+    .hero-chip {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.15);
+      backdrop-filter: blur(8px);
+      color: rgba(255,255,255,0.8);
+      padding: 0.38rem 0.9rem;
+      border-radius: 100px;
+      font-size: 0.78rem;
+    }
+
+    .hero-stay {
+      display: inline-flex;
+      align-items: center;
+      gap: 1rem;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(184,216,188,0.25);
+      backdrop-filter: blur(12px);
+      border-radius: 14px;
+      padding: 1rem 1.4rem;
+      text-decoration: none;
+      color: #fff;
+      transition: background 0.25s, transform 0.2s;
+      text-align: left;
+    }
+
+    .hero-stay:hover { background: rgba(255,255,255,0.13); transform: translateY(-2px); }
+
+    .stay-ico { font-size: 1.8rem; }
+
+    .stay-info small {
+      display: block;
+      font-size: 0.67rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--g4);
+      margin-bottom: 0.15rem;
+    }
+
+    .stay-info strong { display: block; font-size: 0.95rem; font-weight: 600; }
+    .stay-info span { font-size: 0.74rem; color: rgba(255,255,255,0.5); }
+
+    .scroll-down {
+      position: absolute;
+      bottom: 2rem; left: 50%;
+      transform: translateX(-50%);
+      z-index: 3;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      color: rgba(255,255,255,0.35);
+      font-size: 0.62rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+    }
+
+    .scroll-line {
+      width: 1px; height: 40px;
+      background: linear-gradient(to bottom, transparent, rgba(255,255,255,0.4));
+      animation: pulse 2s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0%,100% { opacity:.3; transform:scaleY(.8); }
+      50% { opacity:.9; transform:scaleY(1); }
+    }
+
+    /* ── MAIN ── */
+    main {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 1.2rem 5rem;
+    }
+
+    /* ── DAY ── */
+    .day { padding-top: 4rem; }
+
+    .day-head {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 1.2rem;
+      align-items: end;
+      padding-bottom: 1.2rem;
+      border-bottom: 1.5px solid var(--be2);
+      margin-bottom: 2.4rem;
+    }
+
+    .day-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 5rem;
+      font-weight: 400;
+      color: var(--g2);
+      opacity: 0.3;
+      line-height: 1;
+    }
+
+    .day-flag {
+      font-size: 0.67rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--tc1);
+      margin-bottom: 0.2rem;
+    }
+
+    .day-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.35rem, 4vw, 1.9rem);
+      font-weight: 500;
+      color: var(--g1);
+      line-height: 1.15;
+    }
+
+    /* ── TIMELINE ── */
+    .tl {
+      position: relative;
+      padding-left: 2.6rem;
+    }
+
+    .tl::before {
+      content: '';
+      position: absolute;
+      left: 11px; top: 0; bottom: 0;
+      width: 1.5px;
+      background: linear-gradient(to bottom, var(--g4), var(--be2) 90%, transparent);
+    }
+
+    /* ── CARD ── */
+    .card {
+      position: relative;
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 1.35rem 1.5rem;
+      margin-bottom: 1.2rem;
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(200,220,200,0.4);
+      transition: box-shadow 0.22s, transform 0.22s;
+    }
+
+    .card:hover { box-shadow: var(--shadow-hover); transform: translateY(-2px); }
+
+    .card::before {
+      content: '';
+      position: absolute;
+      left: -2.1rem; top: 1.55rem;
+      width: 11px; height: 11px;
+      border-radius: 50%;
+      background: var(--g3);
+      border: 2.5px solid var(--be0);
+      box-shadow: 0 0 0 2.5px var(--g4);
+    }
+
+    .card-top {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.85rem;
+      margin-bottom: 0.7rem;
+    }
+
+    .c-icon { font-size: 1.55rem; line-height: 1; flex-shrink: 0; margin-top: 0.05rem; }
+
+    .c-period {
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--tc1);
+      margin-bottom: 0.12rem;
+    }
+
+    .c-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem;
+      font-weight: 500;
+      color: var(--tx);
+      line-height: 1.2;
+    }
+
+    .c-body { font-size: 0.88rem; color: var(--tx2); line-height: 1.65; }
+    .c-body p { margin-bottom: 0.35rem; }
+    .c-body p:last-child { margin-bottom: 0; }
+    .c-body strong { color: var(--tx); font-weight: 600; }
+
+    /* ── LINKS ── */
+    .links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+      margin-top: 0.9rem;
+    }
+
+    .lnk {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.32rem;
+      padding: 0.3rem 0.75rem;
+      border-radius: 100px;
+      font-size: 0.72rem;
+      font-weight: 500;
+      text-decoration: none;
+      letter-spacing: 0.02em;
+      transition: filter 0.18s, transform 0.18s;
+    }
+
+    .lnk:hover { filter: brightness(0.88); transform: translateY(-1px); }
+
+    .lnk-site  { background: var(--g5);  color: var(--g1); }
+    .lnk-insta { background: #fde8e0;    color: #9a3520; }
+
+    /* ── OPTIONS ── */
+    .choose-label {
+      font-size: 0.66rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--tc0);
+      margin-bottom: 0.75rem;
+    }
+
+    .opt {
+      background: var(--be0);
+      border-radius: 12px;
+      padding: 0.9rem 1rem;
+      margin-bottom: 0.65rem;
+      border-left: 3px solid var(--g3);
+    }
+
+    .opt:last-child { margin-bottom: 0; }
+
+    .opt-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.05rem;
+      font-weight: 500;
+      color: var(--tx);
+      margin-bottom: 0.4rem;
+    }
+
+    /* ── SEP ── */
+    .sep {
+      text-align: center;
+      position: relative;
+      margin: 1rem 0 0;
+    }
+
+    .sep::before {
+      content: '';
+      position: absolute;
+      inset: 50% 0 auto;
+      height: 1px;
+      background: var(--be2);
+    }
+
+    .sep-ico {
+      position: relative;
+      display: inline-block;
+      background: var(--be0);
+      padding: 0 1rem;
+      font-size: 1.3rem;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      text-align: center;
+      padding: 3rem 1.5rem 2.5rem;
+      border-top: 1px solid var(--be2);
+      margin-top: 3rem;
+      color: var(--tx3);
+    }
+
+    .f-phrase {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 1.2rem;
+      color: var(--g2);
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+
+    footer small { font-size: 0.75rem; letter-spacing: 0.05em; }
+
+    /* ── REVEAL ── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.55s ease, transform 0.55s ease;
+    }
+
+    .reveal.in { opacity: 1; transform: none; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 480px) {
+      .day-num { font-size: 3.5rem; }
+      .tl { padding-left: 1.9rem; }
+      .card::before { left: -1.42rem; }
+      .card { padding: 1.1rem 1.1rem; }
+      .c-title { font-size: 1.1rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ══ HERO ════════════════════════════════ -->
+<header class="hero">
+  <div class="hero-glow"></div>
+
+  <svg class="hero-mountains" viewBox="0 0 1440 280" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,180 L100,120 L220,165 L360,90 L500,145 L640,68 L780,115 L920,60 L1060,105 L1200,72 L1320,108 L1440,80 L1440,280 L0,280Z" fill="rgba(46,84,54,0.30)"/>
+    <path d="M0,210 L90,172 L200,200 L310,150 L430,185 L560,130 L700,172 L840,138 L970,176 L1090,148 L1210,175 L1340,155 L1440,170 L1440,280 L0,280Z" fill="rgba(30,53,36,0.45)"/>
+    <path d="M0,245 L80,228 L190,242 L300,218 L420,238 L540,215 L660,236 L780,218 L900,238 L1020,218 L1140,236 L1260,220 L1380,238 L1440,224 L1440,280 L0,280Z" fill="rgba(15,35,20,0.65)"/>
+  </svg>
+
+  <div class="hero-content">
+    <div class="hero-eyebrow">🏔 Serra da Mantiqueira · Minas Gerais</div>
+    <h1>Roteiro<br/><em>Passa Quatro</em></h1>
+    <p class="hero-tagline">Uma escapada de fim de semana pela serra</p>
+    <div class="hero-chips">
+      <div class="hero-chip">📅 01 a 03 de Maio</div>
+      <div class="hero-chip">🏡 3 dias · 2 noites</div>
+      <div class="hero-chip">🚂 Serra da Mantiqueira</div>
+    </div>
+    <a class="hero-stay" href="https://pousadacaminhodosventos.com.br/" target="_blank" rel="noopener">
+      <span class="stay-ico">🏡</span>
+      <div class="stay-info">
+        <small>Hospedagem</small>
+        <strong>Pousada Caminho dos Ventos</strong>
+        <span>pousadacaminhodosventos.com.br</span>
+      </div>
+    </a>
+  </div>
+
+  <div class="scroll-down">
+    <span>ver roteiro</span>
+    <div class="scroll-line"></div>
+  </div>
+</header>
+
+<!-- ══ CONTENT ══════════════════════════════ -->
+<main>
+
+  <!-- ─── DIA 1 ─── -->
+  <section class="day reveal">
+    <div class="day-head">
+      <div class="day-num">01</div>
+      <div class="day-meta">
+        <div class="day-flag">Sexta-Feira · 01 de Maio</div>
+        <div class="day-title">Chegada + Casa da Búfala<br/>+ São Lourenço</div>
+      </div>
+    </div>
+
+    <div class="tl">
+
+      <div class="card reveal">
+        <div class="card-top">
+          <span class="c-icon">🌄</span>
+          <div class="c-head">
+            <div class="c-period">Manhã</div>
+            <div class="c-title">Chegada & Check-in</div>
+          </div>
+        </div>
+        <div class="c-body">
+          <p>Chegada cedo</p>
+          <p>Check-in na pousada</p>
+        </div>
+        <div class="links">
+          <a class="lnk lnk-site" href="https://pousadacaminhodosventos.com.br/" target="_blank" rel="noopener">🌐 pousadacaminhodosventos.com.br</a>
+        </div>
+      </div>
+
+      <div class="card reveal">
+        <div class="card-top">
+          <span class="c-icon">🐃</span>
+          <div class="c-head">
+            <div class="c-period">Almoço</div>
+            <div class="c-title">Casa da Búfala – Pérola da Serra</div>
+          </div>
+        </div>
+        <div class="links">
+          <a class="lnk lnk-site" href="https://www.visiteitanhandu.com.br/casa-da-bufala" target="_blank" rel="noopener">🌐 visiteitanhandu.com.br</a>
+          <a class="lnk lnk-insta" href="https://www.instagram.com/peroladaserrabufala/" target="_blank" rel="noopener">📸 @peroladaserrabufala</a>
+        </div>
+      </div>
+
+      <div class="card reveal">
+        <div class="card-top">
+          <span class="c-icon">🏙️</span>
+          <div class="c-head">
+            <div class="c-period">Tarde</div>
+            <div class="c-title">Passeio em São Lourenço</div>
+          </div>
+        </div>
+        <div class="c-body"><p>Passeio em São Lourenço</p></div>
+      </div>
+
+      <div class="card reveal">
+        <div class="card-top">
+          <span class="c-icon">🍕</span>
+          <div class="c-head">
+            <div class="c-period">Noite</div>
+            <div class="c-title">Esfiharia & Pizzaria Mutto</div>
+          </div>
+        </div>
+        <div class="c-body"><p>Esfiharia & Pizzaria Mutto</p></div>
+        <div class="links">
+          <a class="lnk lnk-insta" href="https://www.instagram.com/esfihariamuttop4/" target="_blank" rel="noopener">📸 @esfihariamuttop4</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="sep reveal"><span class="sep-ico">⛰️</span></div>
+
+  <!-- ─── DIA 2 ─── -->
+  <section class="day reveal">
+    <div class="day-head">
+      <div class="day-num">02</div>
+      <div class="day-meta">
+        <div class="day-flag">Sábado · 02 de Maio</div>
+        <div class="day-title">Trem + Almoço<br/>+ Museu + Café</div>
+      </div>
+    </div>
+
+    <div class="tl">
+
+      <div class="card reveal">
+        <div class="card-top">
+          <span class="c-icon">🚂</span>
+          <div class="c-head">
+            <div class="c-period">Manhã · 10h</div>
+            <div class="c-title">Passeio de Trem</div>
+          </div>
+        </div>
+        <div class="c-body"><p>Passeio de trem às 10h</p></div>
+      </div>
+
+      <div class="card reveal">
+        <div class="card-top">
+          <span class="c-icon">🍽️</span>
+          <div class="c-head">
+            <div class="c-period">Almoço · 12h30 – 14h30</div>
+            <div class="c-title">Escolher entre</div>
+          </div>
+        </div>
+        <div class="c-body">
+          <div class="choose-label">Opções de restaurante</div>
+
+          <div class="opt">
+            <div class="opt-name">A Estação Restaurante Bar</div>
+            <div class="links">
+              <a class="lnk lnk-insta" href="https://www.instagram.com/aestacaorestaurante/" target="_blank" rel="noopener">📸 @aestacaorestaurante</a>
+            </div>
+          </div>
+
+          <div class="opt">
+            <div class="opt-name">Villa Comini</div>
+            <div class="links">
+              <a class="lnk lnk-insta" href="https://www.instagram.com/villacomini/" target="_blank" rel="noopener">📸 @villacomini</a>
+            </div>
+          </div>
+
+          <div class="opt">
+            <div class="opt-name">La Minas</div>
+            <div class="links">
+              <a class="lnk lnk-insta" href="https://www.instagram.com/laaminass/" target="_blank" rel="noopener">📸 @laaminass</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card reveal">
+        <div class="card-top">
+          <span class="c-icon">🏛️</span>
+          <div class="c-head">
+            <div class="c-period">Tarde · 14h</div>
+            <div class="c-title">Museu Brasil Nota 10</div>
+          </div>
+        </div>
+        <div class="c-body"><p>Museu Brasil Nota 10</p></div>
+        <div class="links">
+          <a class="lnk lnk-site" href="https://museubrasilnota10.com.br/" target="_blank" rel="noopener">🌐 museubrasilnota10.com.br</a>
+          <a class="lnk lnk-insta" href="https://www.instagram.com/museubrasilnota10/" target="_blank" rel="noopener">📸 @museubrasilnota10</a>
+        </div>
+      </div>
+
+      <div class="card reveal">
+        <div class="card-top">
+          <span class="c-icon">☕</span>
+          <div class="c-head">
+            <div class="c-period">Café da tarde</div>
+            <div class="c-title">Escolher entre</div>
+          </div>
+        </div>
+        <div class="c-body">
+          <div class="choose-label">Opções de café</div>
+
+          <div class="opt">
+            <div class="opt-name">CHRIS Cafés Especiais</div>
+            <div class="links">
+              <a class="lnk lnk-insta" href="https://www.instagram.com/chriscafesespeciais/" target="_blank" rel="noopener">📸 @chriscafesespeciais</a>
+            </div>
+          </div>
+
+          <div class="opt">
+            <div class="opt-name">CAVA – Bistrô, Café e Livro</div>
+            <div class="links">
+              <a class="lnk lnk-insta" href="https://www.instagram.com/cavabistro/" target="_blank" rel="noopener">📸 @cavabistro</a>
+            </div>
+          </div>
+
+          <div class="opt">
+            <div class="opt-name">Espresso 365</div>
+            <div class="links">
+              <a class="lnk lnk-insta" href="https://www.instagram.com/espresso365p4/" target="_blank" rel="noopener">📸 @espresso365p4</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card reveal">
+        <div class="card-top">
+          <span class="c-icon">🍕</span>
+          <div class="c-head">
+            <div class="c-period">Noite</div>
+            <div class="c-title">Pizzaria do Cachorro Cruzado</div>
+          </div>
+        </div>
+        <div class="c-body"><p>Pizzaria do Cachorro Cruzado</p></div>
+        <div class="links">
+          <a class="lnk lnk-insta" href="https://www.instagram.com/cachorrocruzado/" target="_blank" rel="noopener">📸 @cachorrocruzado</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="sep reveal"><span class="sep-ico">⛪</span></div>
+
+  <!-- ─── DIA 3 ─── -->
+  <section class="day reveal">
+    <div class="day-head">
+      <div class="day-num">03</div>
+      <div class="day-meta">
+        <div class="day-flag">Domingo · 03 de Maio</div>
+        <div class="day-title">Missa + Check-out<br/>+ Rancho + Retorno</div>
+      </div>
+    </div>
+
+    <div class="tl">
+
+      <div class="card reveal">
+        <div class="card-top">
+          <span class="c-icon">⛪</span>
+          <div class="c-head">
+            <div class="c-period">Manhã</div>
+            <div class="c-title">Café · Missa · Check-out</div>
+          </div>
+        </div>
+        <div class="c-body">
+          <p>Café na pousada</p>
+          <p>Missa na <strong>Igreja Matriz</strong></p>
+          <p>Check-out</p>
+        </div>
+      </div>
+
+      <div class="card reveal">
+        <div class="card-top">
+          <span class="c-icon">🌊</span>
+          <div class="c-head">
+            <div class="c-period">Day Use</div>
+            <div class="c-title">Rancho do Zé João</div>
+          </div>
+        </div>
+        <div class="c-body"><p>Rancho do Zé João <strong>(Lavrinhas/SP)</strong></p></div>
+        <div class="links">
+          <a class="lnk lnk-insta" href="https://www.instagram.com/ranchodozejoao/" target="_blank" rel="noopener">📸 @ranchodozejoao</a>
+        </div>
+      </div>
+
+      <div class="card reveal">
+        <div class="card-top">
+          <span class="c-icon">☕</span>
+          <div class="c-head">
+            <div class="c-period">Parada</div>
+            <div class="c-title">Cruzeiro/SP</div>
+          </div>
+        </div>
+        <div class="c-body">
+          <p>Parada em <strong>Cruzeiro/SP</strong></p>
+          <p><em>Sugestão:</em> Café com Trem ☕🚂</p>
+        </div>
+      </div>
+
+      <div class="card reveal">
+        <div class="card-top">
+          <span class="c-icon">🏠</span>
+          <div class="c-head">
+            <div class="c-period">Retorno</div>
+            <div class="c-title">Volta para casa</div>
+          </div>
+        </div>
+        <div class="c-body"><p>Volta para casa</p></div>
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <em class="f-phrase">Boas viagens pela Serra da Mantiqueira 🏔️</em>
+  <small>Roteiro Passa Quatro · 01 a 03 de Maio</small>
+</footer>
+
+<script>
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((e, i) => {
+      if (e.isIntersecting) {
+        setTimeout(() => e.target.classList.add('in'), i * 55);
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.07 });
+
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+</body>
+</html>
